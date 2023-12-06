@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Futura', sans-serif;
+            color: colour;
+        }
+    </style>
+    <script>
+        function toggleColorFormat(inputId, selectId) {
+            var inputElement = document.getElementById(inputId);
+            var selectElement = document.getElementById(selectId);
+
+            selectElement.addEventListener('change', function() {
+                if (selectElement.value === 'rgb') {
+                    inputElement.type = 'color';
+                } else if (selectElement.value === 'hsb') {
+                    inputElement.type = 'text';
+                    inputElement.placeholder = 'Enter HSB value (e.g., 0, 100, 100)';
+                }
+            });
+        }
+    </script>
+    <title>data tartan generator-emmiedrummondtextiledesign</title>
+    <!-- Add additional styles here -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">data tartan generator- emmiedrummondtextiledesign</h1>
+        <form action="{{ url_for('index') }}" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="birthday">birthday (DD,MM,YY):</label>
+                <input type="text" class="form-control" id="birthday" name="birthday" required>
+            </div>
+
+            <!-- Color input fields with format selection -->
+            <div class="form-group">
+                <label for="color1">colour 1 e.g parent 1 birthplace coordinates and age:</label>
+                <select id="color1Format" name="color1Format">
+                    <option value="rgb">RGB</option>
+                    <option value="hsb">HSB</option>
+                </select>
+                <input type="color" class="form-control" id="color1" name="color1" value="#ff0000" required>
+                <script>toggleColorFormat('color1', 'color1Format');</script>
+            </div>
+
+            <div class="form-group">
+                <label for="color2">colour 2- e.g parent 2 birthplace coordinates and age:</label>
+                <select id="color2Format" name="color2Format">
+                    <option value="rgb">RGB</option>
+                    <option value="hsb">HSB</option>
+                </select>
+                <input type="color" class="form-control" id="color2" name="color2" value="#0000ff" required>
+                <script>toggleColorFormat('color2', 'color2Format');</script>
+            </div>
+
+            <div class="form-group">
+                <label for="color3">colour 3 e.g.grandparent 1 birthplace coordinates and age:</label>
+                <select id="color3Format" name="color3Format">
+                    <option value="rgb">RGB</option>
+                    <option value="hsb">HSB</option>
+                </select>
+                <input type="color" class="form-control" id="color3" name="color3" value="#00ff00" required>
+                <script>toggleColorFormat('color3', 'color3Format');</script>
+            </div>
+
+            <div class="form-group">
+                <label for="color4">colour 4 e.g. grandparent 2 birthplace coordinates and age:</label>
+                <select id="color4Format" name="color4Format">
+                    <option value="rgb">RGB</option>
+                    <option value="hsb">HSB</option>
+                </select>
+                <input type="color" class="form-control" id="color4" name="color4" value="#ffffff" required>
+                <script>toggleColorFormat('color4', 'color4Format');</script>
+            </div>
+
+            <div class="form-group">
+                <label for="color5">colour 5 e.g. grandparent 3 birthplace coordinates and age:</label>
+                <select id="color5Format" name="color5Format">
+                    <option value="rgb">RGB</option>
+                    <option value="hsb">HSB</option>
+                </select>
+                <input type="color" class="form-control" id="color5" name="color5" value="#969696" required>
+                <script>toggleColorFormat('color5', 'color5Format');</script>
+            </div>
+
+            <div class="form-group">
+                <label for="color6">colour 6 e.g. grandparent 4 birthplace coordinates and age:</label>
+                <select id="color6Format" name="color6Format">
+                    <option value="rgb">RGB</option>
+                    <option value="hsb">HSB</option>
+                </select>
+                <input type="color" class="form-control" id="color6" name="color6" value="#c29e72" required>
+                <script>toggleColorFormat('color6', 'color6Format');</script>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate Tartan</button>
+        </form>
+        <!-- Add any additional content or information here -->
+    </div>
+    <!-- Add additional scripts or styles here -->
+</body>
+</html>
